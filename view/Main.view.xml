@@ -1,0 +1,61 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:t="sap.ui.table"
+	controllerName="acc.fiori.controller.Main"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Emlpoyee data">
+				<content>
+				<t:Table rows="{/empTab}" selectionMode="Single" visibleRowCount="3" rowSelectionChange="onRowSelect">
+					<t:columns>
+						<t:Column>
+							<t:label>
+								<Label text="{i18n>XLBL_empNo}"></Label>
+							</t:label>
+							<t:template>
+								<Text text="{empNo}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Label text="EmpName"></Label>
+							</t:label>
+							<t:template>
+								<Text text="{empName}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Label text="Salary"></Label>
+							</t:label>
+							<t:template>
+								<Text text="{salary}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Label text="Currency"></Label>
+							</t:label>
+							<t:template>
+								<Input value="{currency}"></Input>
+							</t:template>
+						</t:Column>
+					</t:columns>	
+				</t:Table>
+					<form:SimpleForm id="idSimple" layout="ResponsiveGridLayout" editable="true">
+						<Label text="Employee Number"></Label>
+						<Input width="150px" value="{empNo}"></Input>
+						<Label text="Employee Name"></Label>
+						<Input id="idName" width="150px" value="{empName}"></Input>
+						<Label text="Salary"></Label>
+						<Input width="150px" value="{salary}"></Input>
+						<Label text="Currency"></Label>
+						<Input width="150px" value="{currency}"></Input>
+						<Label></Label>
+						<Button text="Submit" width="150px" press="onPress"></Button>
+					
+					</form:SimpleForm>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
